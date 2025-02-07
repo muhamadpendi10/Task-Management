@@ -1,0 +1,24 @@
+@import './variables';
+
+// Login Submit
+.login-submit {
+  width: 80%;
+  background: $primary-color;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 500ms;
+  box-shadow: 0 0 7px 0 black;
+  font-size: 1.3rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  text-transform: uppercase;
+  border-radius: 10px;
+  &:hover {
+    width: 100%;
+    background: white;
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+}

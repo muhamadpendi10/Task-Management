@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+body {
+  background: url('../images/bg.jpg') no-repeat;
+  background-size: 100%;
+}
+button {
+  font: inherit;
+  background: transparent;
+  border: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  background: url('../images/bg.jpg') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  height: 100%;
+}
+.hover-animate-action > img:hover {
+  animation: animate-action 500ms;
+}
+@keyframes animate-action {
+  0% {
+    transform: rotate(10deg);
+  }
+  50%,
+  100% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+// Task List Styles
+// Table Width
+.tl-table {
+  &__item:nth-child(1) {
+    width: 15%;
+  }
+  &__item:nth-child(2) {
+    width: 25%;
+  }
+  &__item:nth-child(3) {
+    width: 20%;
+  }
+  &__item:nth-child(4) {
+    width: 15%;
+  }
+  &__item:nth-child(5) {
+    width: 17%;
+  }
+  &__item:nth-child(6) {
+    width: 7%;
+  }
+  // @media screen and (min-width: $mobile) and (max-width: $tablet) {
+  //   .tl-table__item {
+  //     width: 100%;
+  //   }
+  // }
+}
+
+// Burger Menu
+.burger-menu {
+  height: 40px;
+  width: 40px;
+  // box-shadow: 0 0 10px 0 gray;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  cursor: pointer;
+  & > div {
+    display: block;
+    width: 100%;
+    height: 10%;
+    background: black;
+    border-radius: 15px;
+    transition: rotate 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &:hover > div,
+  .active-burger-menu {
+    &:nth-child(1) {
+      rotate: 45deg;
+    }
+    &:nth-child(3) {
+      rotate: -45deg;
+    }
+    &:nth-child(1),
+    &:nth-child(3) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+    }
+    &:nth-child(2) {
+      background: transparent;
+    }
+  }
+}
